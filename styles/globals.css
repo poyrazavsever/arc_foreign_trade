@@ -7,23 +7,44 @@
 }
 
 
-/* Global CSS veya yerel stil dosyasına ekleyin */
-@keyframes scroll {
-      0% {
-        transform: translateX(100%); /* Başlangıç noktası sağda */
+.responsive-logo {
+      width: 10vw; /* Ekranın %10'u kadar genişlik */
+      height: auto; /* Yüksekliği oranlı olarak ayarla */
+      max-width: 150px; /* Max genişlik sınırı */
+      min-width: 100px; /* Min genişlik sınırı */
+    }
+    
+    @media (max-width: 768px) {
+      .responsive-logo {
+        width: 12vw; /* Daha büyük bir yüzdelik mobilde */
+        max-width: 180px; /* Max genişlik sınırı */
+        min-width: 120px; /* Min genişlik sınırı */
       }
-      100% {
-        transform: translateX(-100%); /* Son noktası solda */
+    }
+    
+    @media (max-width: 480px) {
+      .responsive-logo {
+        width: 15vw; /* En küçük ekranlar için genişliği artır */
+        max-width: 200px; /* Max genişlik sınırı */
+        min-width: 130px; /* Min genişlik sınırı */
       }
     }
     
     .animate-scroll {
       display: flex;
-      animation: scroll 20s linear infinite;
+      animation: scroll-left 20s linear infinite;
     }
     
-    .overflow-hidden {
-      overflow: hidden;
+    /* Animasyon tanımı */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%); /* Sağdan başlasın */
+      }
+      100% {
+        transform: translateX(-100%); /* Solda bitiş */
+      }
     }
+    
+    
     
     

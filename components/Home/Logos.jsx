@@ -25,6 +25,7 @@ const Logos = () => {
               width={150}
               height={80}
               objectFit="contain"
+              className="responsive-logo"
             />
           </div>
         ))}
