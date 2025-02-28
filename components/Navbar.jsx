@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
     <nav className="bg-white shadow-sm">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
@@ -12,14 +15,46 @@ const Navbar = () => {
 
         {/* Menü Linkleri */}
         <div className="hidden md:flex space-x-6">
-          <Link href="/" className="text-neutral-700 hover:text-secondary">Ana Sayfa</Link>
-          <Link href="/about" className="text-neutral-700 hover:text-secondary">Hakkımızda</Link>
-          <Link href="/services" className="text-neutral-700 hover:text-secondary">Hizmetlerimiz</Link>
-          <Link href="/products" className="text-neutral-700 hover:text-secondary">Ürünler</Link>
-          <Link href="/references" className="text-neutral-700 hover:text-secondary">Referanslar</Link>
-          <Link href="/blog" className="text-neutral-700 hover:text-secondary">Blog</Link>
-          <Link href="/ai-assistant" className="text-neutral-700 hover:text-secondary">Akıllı Asistan</Link>
-          <Link href="/contact" className="text-neutral-700 hover:text-secondary">İletişim</Link>
+          <Link href="/">
+            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/" ? "text-secondary" : ""}`}>
+              Ana Sayfa
+            </span>
+          </Link>
+          <Link href="/about">
+            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/about" ? "text-secondary" : ""}`}>
+              Hakkımızda
+            </span>
+          </Link>
+          <Link href="/services">
+            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/services" ? "text-secondary" : ""}`}>
+              Hizmetlerimiz
+            </span>
+          </Link>
+          <Link href="/products">
+            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/products" ? "text-secondary" : ""}`}>
+              Ürünler
+            </span>
+          </Link>
+          <Link href="/references">
+            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/references" ? "text-secondary" : ""}`}>
+              Referanslar
+            </span>
+          </Link>
+          <Link href="/blog">
+            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/blog" ? "text-secondary" : ""}`}>
+              Blog
+            </span>
+          </Link>
+          <Link href="/ai-assistant">
+            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/ai-assistant" ? "text-secondary" : ""}`}>
+              Akıllı Asistan
+            </span>
+          </Link>
+          <Link href="/contact">
+            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/contact" ? "text-secondary" : ""}`}>
+              İletişim
+            </span>
+          </Link>
         </div>
 
         {/* Giriş Yap Butonu */}
