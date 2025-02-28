@@ -1,6 +1,7 @@
 import React from 'react'
 
 import PopularProducts from '@/components/Products/PopularProducts'
+import CustomerProducts from '@/components/Products/CustomerProducts'
 
 
 const Products = () => {
@@ -8,6 +9,8 @@ const Products = () => {
     <div>
 
       <PopularProducts />
+
+      <CustomerProducts />
       
     </div>
   )
