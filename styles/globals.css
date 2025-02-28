@@ -5,3 +5,25 @@
       --color-primary: #002E5D;
       --color-secondary: #00478F;
 }
+
+
+/* Global CSS veya yerel stil dosyasına ekleyin */
+@keyframes scroll {
+      0% {
+        transform: translateX(100%); /* Başlangıç noktası sağda */
+      }
+      100% {
+        transform: translateX(-100%); /* Son noktası solda */
+      }
+    }
+    
+    .animate-scroll {
+      display: flex;
+      animation: scroll 20s linear infinite;
+    }
+    
+    .overflow-hidden {
+      overflow: hidden;
+    }
+    
+    
