@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col lg:flex-row h-auto lg:h-[700px]">
+    <div className="flex flex-col lg:flex-row h-auto lg:h-[700px] mb-12 md:mb-24">
 
       {/* Metin Bölümü */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-start p-8"> 

@@ -14,7 +14,7 @@ const Logos = () => {
   ];
 
   return (
-    <div className="overflow-hidden py-8 md:py-24">
+    <div className="overflow-hidden py-8 md:py-48">
       <div className="flex animate-scroll">
         {/* İlk grup logolar */}
         {logoPaths.map((path, index) => (

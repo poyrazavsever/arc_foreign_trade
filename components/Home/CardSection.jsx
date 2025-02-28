@@ -3,7 +3,7 @@ import { FaFileAlt, FaBullhorn, FaGlobe } from 'react-icons/fa';
 
 const CardSection = () => {
   return (
-    <div className="flex justify-center items-center py-16 bg-white">
+    <div className="flex justify-center items-center py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Sol Bölüm: Kartlar */}
         <div className="space-y-4">
@@ -49,7 +49,7 @@ const CardSection = () => {
           <p className="text-gray-600 mb-8">
             Küresel pazara açılmak karmaşık görünebilir. İşte bu yüzden, ARC olarak yalnızca bir danışman değil, sizin dış ticaret departmanınız oluyoruz. Hedef pazar analizinizden, satış ve operasyon süreçlerinize kadar her adımda yanınızdayız. Afrika ve Asya'dan gelen uzman ekibimizle markanızı uluslararası başarıya taşıyoruz.
           </p>
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+          <button className="bg-primary text-white px-6 py-3 hover:bg-secondary transition">
             İlk Adımı Atın
           </button>
         </div>
