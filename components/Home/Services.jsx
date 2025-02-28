@@ -14,7 +14,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {/* Sosyal Medya Yönetimi Kartı */}
-          <div className="border border-neutral-200 rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-lg">
+          <div className="border border-neutral-200 rounded-lg p-6 transform transition-transform cursor-pointer hover:scale-105 hover:shadow-lg">
             <div className="mb-4">
               <Image
                 src="/Illus/social-media.png" // Resim yolunu güncelleyin
@@ -34,7 +34,7 @@ const Services = () => {
           </div>
 
           {/* Web Site Tasarımı Kartı */}
-          <div className="border border-neutral-200 rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-lg">
+          <div className="border border-neutral-200 rounded-lg p-6 transform transition-transform cursor-pointer hover:scale-105 hover:shadow-lg">
             <div className="mb-4">
               <Image
                 src="/Illus/website-design.png" // Resim yolunu güncelleyin
@@ -54,7 +54,7 @@ const Services = () => {
           </div>
 
           {/* Doğrudan Müşteri Temini */}
-          <div className="border border-neutral-200 rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-lg">
+          <div className="border border-neutral-200 rounded-lg p-6 transform transition-transform cursor-pointer hover:scale-105 hover:shadow-lg">
             <div className="mb-4">
               <Image
                 src="/Illus/customer-finding.png" // Resim yolunu güncelleyin
@@ -74,7 +74,7 @@ const Services = () => {
           </div>
 
           {/* İthalat & İhracat Operasyon Yönetimi */}
-          <div className="border border-neutral-200 rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-lg">
+          <div className="border border-neutral-200 rounded-lg p-6 transform transition-transform cursor-pointer hover:scale-105 hover:shadow-lg">
             <div className="mb-4">
               <Image
                 src="/Illus/foreign.png" // Resim yolunu güncelleyin
