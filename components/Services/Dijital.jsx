@@ -1,5 +1,5 @@
 import React from 'react';
-import ServiceCard from '../ServiceCard'; // ServiceCard bileşeninin yolunu güncelleyin
+import ServiceCard from './ServiceCard'; // ServiceCard bileşeninin yolunu güncelleyin
 
 const Dijital = () => {
   const services = [
