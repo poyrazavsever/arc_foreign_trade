@@ -18,7 +18,7 @@ const Logos = () => {
       <div className="flex animate-scroll">
         {/* İlk grup logolar */}
         {logoPaths.map((path, index) => (
-          <div key={index} className="h-20 w-auto flex items-center mr-8">
+          <div key={index} className="h-20 w-auto flex items-center mr-12 md:mr-24">
             <Image
               src={path}
               alt={`Logo ${index + 1}`}
