@@ -1,6 +1,8 @@
 import React from 'react'
 
 import Populars from '@/components/Services/Populars'
+import Dijital from '@/components/Services/Dijital'
+import Marketing from '@/components/Services/Marketing'
 
 
 const Services = () => {
@@ -8,6 +10,10 @@ const Services = () => {
     <div>
 
         <Populars />
+
+        <Dijital />
+
+        <Marketing />
       
     </div>
   )
