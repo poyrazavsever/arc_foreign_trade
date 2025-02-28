@@ -24,13 +24,6 @@ const ProductCard = ({ category, title, imageSrc, alt }) => {
         <h3 className="text-2xl font-bold text-gray-800 mb-2">
           {title}
         </h3>
-        {/* Ek Özellikler (isteğe bağlı) */}
-        <div className="flex justify-between items-center mt-4">
-          <span className="text-gray-600">Fiyat: $99.99</span>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-            Sepete Ekle
-          </button>
-        </div>
       </div>
     </div>
   );
