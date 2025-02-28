@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ProductCard from './ProductCard'; // ProductCard bileşeninin yolunu güncelleyin
-import { FaSearch, FaFilter, FaList, FaTh } from 'react-icons/fa';
+import ProductCard from './ProductCard';
+import { FaSearch, FaList, FaTh } from 'react-icons/fa';
 
 const CustomerProducts = () => {
   const allProducts = Array.from({ length: 20 }, (_, i) => ({
@@ -11,15 +11,12 @@ const CustomerProducts = () => {
   }));
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [filter, setFilter] = useState('');
   const [productsPerPage, setProductsPerPage] = useState(8);
   const [currentPage, setCurrentPage] = useState(1);
-  const [layout, setLayout] = useState('grid'); // 'grid' or 'list'
+  const [layout, setLayout] = useState('grid');
 
-  const filteredProducts = allProducts.filter(
-    (product) =>
-      product.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
-      (filter === '' || product.category.toLowerCase().includes(filter.toLowerCase()))
+  const filteredProducts = allProducts.filter((product) =>
+    product.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -36,26 +33,31 @@ const CustomerProducts = () => {
   };
 
   return (
-    <div className="bg-white py-16">
+    <div className="bg-white py-10">
       <div className="container mx-auto px-4">
 
-        <div className="text-left flex flex-col items-start gap-4 mb-12">
-            <h2 className="text-3xl font-bold text-gray-800">Müşterilerimizin Ürünleri</h2>
-            <p className="text-gray-600">
-                Müşterilerimizin global pazarda yerini alan yenilikçi ve başarılı ürünlerini keşfedin. İş ortaklarımızın başarısına katkı sağlıyoruz!
-            </p>
+        {/* Başlık */}
+        <div className="text-left flex flex-col gap-2 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+            Müşterilerimizin Ürünleri
+          </h2>
+          <p className="text-gray-600 text-sm md:text-base">
+            Müşterilerimizin global pazarda yerini alan yenilikçi ve başarılı ürünlerini keşfedin.
+          </p>
         </div>
 
-        <div className="flex justify-start items-center gap-12 mb-8">
-          {/* Arama Çubuğu */}
-          <div className="flex items-center border border-gray-400 rounded-lg px-4 py-2">
-            <FaSearch className="mr-2 text-gray-400" />
+        {/* Filtreleme ve Arama Alanı */}
+        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+          
+          {/* Arama Kutusu */}
+          <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 w-full md:w-64">
+            <FaSearch className="text-gray-400" />
             <input
               type="text"
               placeholder="Ürün Ara..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="outline-none"
+              className="w-full outline-none px-2 text-sm"
             />
           </div>
 
@@ -63,24 +65,24 @@ const CustomerProducts = () => {
           <select
             value={productsPerPage}
             onChange={(e) => setProductsPerPage(parseInt(e.target.value))}
-            className="border rounded-lg px-4 py-2 outline-none text-gray-600"
+            className="border border-gray-300 rounded-lg px-3 py-2 w-full md:w-auto text-sm outline-none"
           >
             <option value={4}>4 Ürün</option>
             <option value={8}>8 Ürün</option>
             <option value={12}>12 Ürün</option>
           </select>
 
-          {/* Layout Seçimi */}
-          <div className="flex items-center space-x-2">
+          {/* Grid / List Görünüm Seçimi */}
+          <div className="flex space-x-2">
             <button
               onClick={() => handleLayoutChange('grid')}
-              className={`p-2 rounded-lg ${layout === 'grid' ? 'bg-gray-200' : ''}`}
+              className={`p-2 rounded-lg border ${layout === 'grid' ? 'bg-gray-200' : ''}`}
             >
               <FaTh />
             </button>
             <button
               onClick={() => handleLayoutChange('list')}
-              className={`p-2 rounded-lg ${layout === 'list' ? 'bg-gray-200' : ''}`}
+              className={`p-2 rounded-lg border ${layout === 'list' ? 'bg-gray-200' : ''}`}
             >
               <FaList />
             </button>
@@ -88,7 +90,7 @@ const CustomerProducts = () => {
         </div>
 
         {/* Ürün Listesi */}
-        <div className={`grid ${layout === 'grid' ? 'grid-cols-1 md:grid-cols-4' : 'grid-cols-1'} gap-8`}>
+        <div className={`grid gap-6 ${layout === 'grid' ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : 'grid-cols-1'}`}>
           {displayedProducts.map((product, index) => (
             <ProductCard
               key={index}
@@ -100,13 +102,13 @@ const CustomerProducts = () => {
           ))}
         </div>
 
-        {/* Pagination */}
+        {/* Sayfalandırma */}
         {totalPages > 1 && (
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-6">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="px-4 py-2 mx-1 border rounded-lg disabled:opacity-50"
+              className="px-4 py-2 mx-1 border rounded-lg text-sm disabled:opacity-50"
             >
               Önceki
             </button>
@@ -114,7 +116,7 @@ const CustomerProducts = () => {
               <button
                 key={page}
                 onClick={() => handlePageChange(page)}
-                className={`px-4 py-2 mx-1 border rounded-lg ${currentPage === page ? 'bg-blue-600 text-white' : ''}`}
+                className={`px-4 py-2 mx-1 border rounded-lg text-sm ${currentPage === page ? 'bg-blue-600 text-white' : ''}`}
               >
                 {page}
               </button>
@@ -122,7 +124,7 @@ const CustomerProducts = () => {
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 mx-1 border rounded-lg disabled:opacity-50"
+              className="px-4 py-2 mx-1 border rounded-lg text-sm disabled:opacity-50"
             >
               Sonraki
             </button>
