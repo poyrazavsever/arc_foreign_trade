@@ -13,6 +13,10 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false); // Menü kapatılır
+  };
+
   return (
     <nav className="bg-white shadow-sm fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
@@ -34,42 +38,42 @@ const Navbar = () => {
 
         {/* Menü Linkleri (Desktop) */}
         <div className="hidden md:flex space-x-6">
-          <Link href="/">
+          <Link href="/" onClick={closeMenu}>
             <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/" ? "text-secondary" : ""}`}>
               Ana Sayfa
             </span>
           </Link>
-          <Link href="/about">
+          <Link href="/about" onClick={closeMenu}>
             <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/about" ? "text-secondary" : ""}`}>
               Hakkımızda
             </span>
           </Link>
-          <Link href="/services">
+          <Link href="/services" onClick={closeMenu}>
             <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/services" ? "text-secondary" : ""}`}>
               Hizmetlerimiz
             </span>
           </Link>
-          <Link href="/products">
+          <Link href="/products" onClick={closeMenu}>
             <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/products" ? "text-secondary" : ""}`}>
               Ürünler
             </span>
           </Link>
-          <Link href="/references">
+          <Link href="/references" onClick={closeMenu}>
             <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/references" ? "text-secondary" : ""}`}>
               Referanslar
             </span>
           </Link>
-          <Link href="/blog">
+          <Link href="/blog" onClick={closeMenu}>
             <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/blog" ? "text-secondary" : ""}`}>
               Blog
             </span>
           </Link>
-          <Link href="/ai-assistant">
+          <Link href="/ai-assistant" onClick={closeMenu}>
             <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/ai-assistant" ? "text-secondary" : ""}`}>
               Akıllı Asistan
             </span>
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" onClick={closeMenu}>
             <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/contact" ? "text-secondary" : ""}`}>
               İletişim
             </span>
@@ -104,42 +108,42 @@ const Navbar = () => {
 
           {/* Menü Linkleri (Mobil) */}
           <div className="space-y-6 w-full flex flex-col items-start">
-            <Link href="/">
+            <Link href="/" onClick={closeMenu}>
               <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/" ? "text-secondary" : ""}`}>
                 Ana Sayfa
               </span>
             </Link>
-            <Link href="/about">
+            <Link href="/about" onClick={closeMenu}>
               <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/about" ? "text-secondary" : ""}`}>
                 Hakkımızda
               </span>
             </Link>
-            <Link href="/services">
+            <Link href="/services" onClick={closeMenu}>
               <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/services" ? "text-secondary" : ""}`}>
                 Hizmetlerimiz
               </span>
             </Link>
-            <Link href="/products">
+            <Link href="/products" onClick={closeMenu}>
               <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/products" ? "text-secondary" : ""}`}>
                 Ürünler
               </span>
             </Link>
-            <Link href="/references">
+            <Link href="/references" onClick={closeMenu}>
               <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/references" ? "text-secondary" : ""}`}>
                 Referanslar
               </span>
             </Link>
-            <Link href="/blog">
+            <Link href="/blog" onClick={closeMenu}>
               <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/blog" ? "text-secondary" : ""}`}>
                 Blog
               </span>
             </Link>
-            <Link href="/ai-assistant">
+            <Link href="/ai-assistant" onClick={closeMenu}>
               <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/ai-assistant" ? "text-secondary" : ""}`}>
                 Akıllı Asistan
               </span>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact" onClick={closeMenu}>
               <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/contact" ? "text-secondary" : ""}`}>
                 İletişim
               </span>
