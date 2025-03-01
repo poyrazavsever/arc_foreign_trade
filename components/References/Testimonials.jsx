@@ -43,13 +43,15 @@ const Testimonials = () => {
   return (
     <div className="py-16 text-center mt-36">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">Referanslarımız</h2>
-      <p className="text-gray-600 mb-8 max-w-2xl mx-auto px-4 md:px-0">
+      <p className="text-gray-600 mb-8 max-w-6xl mx-auto px-4 md:px-0 pb-12">
         Referanslarımız yorumları, sunduğumuz hizmetlerin en iyi göstergesidir. İş birliklerimizden doğan başarı hikayelerini keşfedin!
       </p>
-      <div className="grid gap-6 sm:grid-cols-2 max-w-6xl mx-auto px-4 md:px-0">
-        {testimonials.map((testimonial) => (
-          <TestimonialCard key={testimonial.id} {...testimonial} />
-        ))}
+      <div className="flex items-center justify-center">
+        <div className="grid gap-6 sm:grid-cols-2 max-w-7xl mx-auto px-4 md:px-0">
+          {testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.id} {...testimonial} />
+          ))}
+        </div>
       </div>
     </div>
   );
