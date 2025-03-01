@@ -122,11 +122,10 @@ const Blog = () => {
   };
 
   return (
-    <div className="w-full container mx-auto my-24">
+    <div className="w-full container mx-auto my-24 px-4">
 
       {/* En Son Yüklenen Post */}
       <div className="w-full h-96 relative mb-8">
-
         <img
           src={blogs[0]?.imageUrl}
           alt="Blog"
@@ -136,21 +135,20 @@ const Blog = () => {
         <div className="absolute inset-0 bg-black opacity-70"></div>
 
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-          <h2 className="text-4xl font-bold mb-4">{blogs[0]?.title}</h2>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">{blogs[0]?.title}</h2>
           <p className="text-lg">{blogs[0]?.author}</p>
           <p className="text-sm">{blogs[0]?.date}</p>
         </div>
-
       </div>
 
       {/* Popüler Postlar */}
       <div className="mb-24">
         <div className="text-left mb-12 flex flex-col items-start gap-4">
-          <h2 className="text-3xl font-bold text-gray-800">Popüler Blog Yazılarımız</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Popüler Blog Yazılarımız</h2>
           <p className="text-gray-600">Öne Çıkan Blog Yazılarımız</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {popularPosts.map((post) => (
             <BlogCard
               key={post.id}
@@ -170,11 +168,11 @@ const Blog = () => {
       {/* Tüm Blog Postları ve Pagination */}
       <div>
         <div className="text-left mb-12 flex flex-col items-start gap-4">
-          <h2 className="text-3xl font-bold text-gray-800">Bütün Blog Yazılarımız</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Bütün Blog Yazılarımız</h2>
           <p className="text-gray-600">Blog yazılarımızı okuyun, keşfedin.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
           {currentPosts.map((post) => (
             <BlogCard
               key={post.id}
@@ -190,18 +188,18 @@ const Blog = () => {
         </div>
 
         {/* Pagination */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-6">
           <button
             onClick={handlePreviousPage}
             disabled={currentPage === 1}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg disabled:bg-gray-400"
           >
             Önceki
           </button>
           <button
             onClick={handleNextPage}
             disabled={indexOfLastPost >= blogs.length}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg disabled:bg-gray-400"
           >
             Sonraki
           </button>
