@@ -17,12 +17,16 @@ const HeroSection = () => {
           üst seviyeye taşıyoruz.
         </p>
         <div className="flex space-x-4">
-          <button className="bg-primary text-white px-6 py-3 hover:bg-blue-700 transition">
-            Hakkımızda
-          </button>
-          <button className="bg-gray-200 text-gray-700 px-6 py-3 hover:bg-gray-300 transition">
-            Akıllı Asistan
-          </button>
+          <a href="/about">
+            <button className="bg-primary text-white px-6 py-3 hover:bg-blue-700 transition cursor-pointer">
+              Hakkımızda
+            </button>
+          </a>
+          <a href="ai-assistant">
+            <button className="bg-gray-200 text-gray-700 px-6 py-3 hover:bg-gray-300 transition cursor-pointer">
+              Akıllı Asistan
+            </button>
+          </a>
         </div>
       </div>
 

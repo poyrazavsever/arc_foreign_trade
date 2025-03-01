@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaLinkedinIn, FaFacebookF, FaTwitter, FaWhatsapp, FaClock, FaPhone } from 'react-icons/fa';
+import { FaLinkedinIn, FaInstagram, FaWhatsapp, FaClock, FaPhone } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 const Footer = () => {
@@ -104,21 +104,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">İletişim</h3>
             <ul className="flex flex-col items-start gap-4">
               <li>
-                <a href="tel:123456789" className="flex items-center text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                <a href="tel:+905316967868" className="flex items-center text-neutral-50 hover:text-blue-200 transition-colors duration-300">
                   <FaPhone className="mr-2" />
-                  123 456 789
+                  0531 696 78 68
+
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" className="flex items-center text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                <a href="https://wa.me/05316967868" target="_blank" rel="noopener noreferrer" className="flex items-center text-neutral-50 hover:text-blue-200 transition-colors duration-300">
                   <FaWhatsapp className="mr-2" />
                   Whatsapp
                 </a>
               </li>
               <li>
-                <a href="mailto:destek@arcforeigntrade.com" className="flex items-center text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                <a href="mailto:info@arcforeigntrade.com" className="flex items-center text-neutral-50 hover:text-blue-200 transition-colors duration-300">
                   <MdEmail className="mr-2" />
-                  destek@arcforeigntrade.com
+                  info@arcforeigntrade.com
                 </a>
               </li>
               <li className="flex items-center text-neutral-50 hover:text-blue-200 transition-colors duration-300">
@@ -131,14 +132,11 @@ const Footer = () => {
 
         {/* Social Media Section */}
         <div className="mt-8 flex justify-center space-x-6">
-          <a href="#" className="text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+          <a href="https://www.linkedin.com/company/arc-foreign-trade" target="_blank" className="text-neutral-50 hover:text-blue-200 transition-colors duration-300">
             <FaLinkedinIn />
           </a>
-          <a href="#" className="text-neutral-50 hover:text-blue-200 transition-colors duration-300">
-            <FaFacebookF />
-          </a>
-          <a href="#" className="text-neutral-50 hover:text-blue-200 transition-colors duration-300">
-            <FaTwitter />
+          <a href="https://www.instagram.com/arcforeigntrade/" target="_blank" className="text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+            <FaInstagram />
           </a>
         </div>
 

@@ -95,9 +95,11 @@ const Services = () => {
         </div>
 
         <div className="mt-12">
-          <button className="bg-primary text-white px-6 py-3 hover:bg-secondary transition">
-            Hepsini Gör
-          </button>
+          <a href="/services">
+            <button className="bg-primary text-white px-6 py-3 hover:bg-secondary transition">
+              Hepsini Gör
+            </button>
+          </a>
         </div>
       </div>
     </div>

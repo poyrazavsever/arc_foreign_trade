@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaTwitter, FaInstagram, FaDiscord } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaInstagram} from 'react-icons/fa';
 
 const Contact = () => {
   // State tanımlamaları
@@ -34,12 +34,12 @@ const Contact = () => {
         <div className='flex flex-col items-start gap-8'>
             <div className="flex items-center gap-4 mb-4">
                 <FaPhoneAlt className="h-6 w-6 mr-2" />
-                <a href="tel:+905555555555" className="text-white">+90 555 555 55 55</a>
+                <a href="tel:+905316967868 " className="text-white">0531 696 78 68 </a>
             </div>
 
             <div className="flex items-center gap-4 mb-4">
                 <FaEnvelope className="h-6 w-6 mr-2" />
-                <a href="mailto:support@arcforeigntrade.com" className="text-white">support@arcforeigntrade.com</a>
+                <a href="mailto:info@arcforeigntrade.com" className="text-white">info@arcforeigntrade.com</a>
             </div>
             
             <div className="flex items-start gap-4 mb-4">
@@ -57,15 +57,15 @@ const Contact = () => {
         </div>
 
         <div className="flex items-center gap-4 space-x-4 mt-16">
-          <div className="bg-white rounded-full p-2">
-            <FaTwitter className="h-6 w-6 text-primary" />
-          </div>
-          <div className="bg-white rounded-full p-2">
-            <FaInstagram className="h-6 w-6 text-primary" />
-          </div>
-          <div className="bg-white rounded-full p-2">
-            <FaDiscord className="h-6 w-6 text-primary" />
-          </div>
+
+          <a href="https://www.linkedin.com/company/arc-foreign-trade" target="_blank" className="bg-white rounded-full p-2 group hover:bg-secondary transition-all">
+            <FaLinkedin className="h-6 w-6 text-primary group-hover:text-white transition-all" />
+          </a>
+
+          <a href="https://www.instagram.com/arcforeigntrade/" target="_blank" className="bg-white rounded-full p-2 group hover:bg-pink-500 transition-all">
+            <FaInstagram className="h-6 w-6 text-primary group-hover:text-white transition-all" />
+          </a>
+
         </div>
       </div>
 
