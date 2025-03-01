@@ -19,15 +19,55 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Sayfalar</h3>
             <ul className="flex flex-col items-start gap-4">
-              {['Ana Sayfa', 'Hakkımızda', 'Hizmetler', 'Ürünler', 'Referanslar', 'Blog', 'Akıllı Asistan'].map((page, index) => (
-                <li key={index}>
-                  <Link href={`/${page.toLowerCase().replace(' ', '-')}`}>
-                    <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
-                      {page}
-                    </span>
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Ana Sayfa
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Hakkımızda
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Hizmetlerimiz
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/products" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Ürünler
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/references" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Referanslar
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Blog
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-assistant" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Akıllı Asistan
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -35,15 +75,27 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">LEGAL</h3>
             <ul className="flex flex-col items-start gap-4">
-              {['Gizlilik Metnimiz', 'Politikalarımız', 'Kariyer Planlama'].map((legal, index) => (
-                <li key={index}>
-                  <Link href={`/${legal.toLowerCase().replace(' ', '-')}`}>
-                    <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
-                      {legal}
-                    </span>
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/privacy-policy" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Gizlilik Metnimiz
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/policies" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Politikalarımız
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" passHref>
+                  <span className="block text-neutral-50 hover:text-blue-200 transition-colors duration-300">
+                    Kariyer Planlama
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -97,7 +149,7 @@ const Footer = () => {
         </div>
 
         {/* Description Section */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-8 grid grid-cols-1 mdz:grid-cols-2 gap-6">
           <div>
             <p>
               Firmamız, sektördeki en yenilikçi çözümlerle, iş süreçlerimizi daha verimli hale getirir. Deneyimli ekibimizle, size özel stratejiler geliştirerek hedeflerinize ulaşmanızı sağlar. Teknolojik altyapımız ve ISO 9001 ilkelerimiz sayesinde, küresel pazarlarda güçlü bir yer edinmeniz için gerekli tüm desteği sunuyoruz.
