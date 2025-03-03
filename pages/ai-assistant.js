@@ -1,22 +1,36 @@
 import React, { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
-import { toast } from "react-hot-toast"; // React Hot Toast ekliyoruz
+import { toast } from "react-hot-toast";
+import ReactMarkdown from 'react-markdown';
 
 const AiAssistant = () => {
   const [answers, setAnswers] = useState({
-    Soru1: "",
-    Soru2: "",
-    Soru3: "",
-    Soru4: "",
-    Soru5: "",
-    Soru6: "",
-    Soru7: "",
-    Soru8: "",
-    Soru9: "",
-    Soru10: "",
-    Soru11: "",
-    Soru12: "",
+    q1: "",
+    q2: "",
+    q3: "",
+    q4: "",
+    q5: "",
+    q6: "",
+    q7: "",
+    q8: "",
+    q9: "",
+    q10: "",
+    q11: "",
+    q12: "",
   });
+
+  const components = {
+    h1: ({ node, ...props }) => <h1 {...props} className="text-3xl font-bold mb-4" />,
+    h2: ({ node, ...props }) => <h2 {...props} className="text-2xl font-semibold mb-3" />,
+    h3: ({ node, ...props }) => <h3 {...props} className="text-xl font-semibold mb-2" />,
+    p: ({ node, ...props }) => <p {...props} className="mb-2" />,
+    ul: ({ node, ...props }) => <ul {...props} className="list-disc list-inside mb-2" />,
+    ol: ({ node, ...props }) => <ol {...props} className="list-decimal list-inside mb-2" />,
+    li: ({ node, ...props }) => <li {...props} className="mb-1" />,
+    a: ({ node, ...props }) => <a {...props} className="text-blue-600 hover:underline" />,
+  };
+
+  const [response, setResponse] = useState(null); // API yanıtını tutmak için state
 
   const questions = [
     "Ne satıyorsunuz?",
@@ -39,12 +53,12 @@ const AiAssistant = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Eksik cevapları kontrol etme
     const incompleteAnswers = Object.keys(answers).filter(
       (key) => answers[key] === ""
     );
-
+  
     if (incompleteAnswers.length > 0) {
       // Eksik cevapları kullanıcıya bildirmek için toast mesajları
       incompleteAnswers.forEach((answer) => {
@@ -52,15 +66,46 @@ const AiAssistant = () => {
       });
     } else {
       // Eğer tüm cevaplar doluysa, verileri gönderme
-      toast.success("Form başarıyla gönderildi!");
-      console.log("Veriler Gönderildi:", answers);
-      // Burada Gemini API'ye istek atacağız
+      toast.promise(
+        new Promise(async (resolve, reject) => {
+          console.log("Veriler Gönderildi:", answers);
+  
+          try {
+            console.log("trya girdi");
+            const response = await fetch('/api/evaluate', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ answers }),
+            });
+  
+            const data = await response.json();
+            console.log("API Yanıtı: ", data);
+  
+            if (data && data.result) {
+              setResponse(data.result);
+              resolve("Değerlendirme tamamlandı!"); // Başarılı durumda resolve çağır
+            } else {
+              reject("Bir hata oluştu, lütfen tekrar deneyin."); // Başarısız durumda reject çağır
+            }
+          } catch (error) {
+            console.error("Hata:", error);
+            reject("Bir hata oluştu, lütfen tekrar deneyin."); // Hata durumunda reject çağır
+          }
+        }),
+        {
+          loading: 'Değerlendiriliyor, lütfen biraz bekleyiniz!',
+          success: (message) => message, // Başarılı mesajı göster
+          error: (error) => error, // Hata mesajını göster
+        }
+      );
     }
   };
 
   return (
     <div className="max-w-3xl mx-auto p-8 border border-neutral-200 rounded mt-48">
-      <div className="flex flex-col items-start gap-2 mb-6 ">
+      <div className="flex flex-col items-start gap-2 mb-6">
         <h1 className="text-3xl font-bold text-left text-primary">Akıllı Asistan</h1>
         <p className="text-neutral-500">Yapay zeka destekli danışmanımıza hoş geldiniz!</p>
       </div>
@@ -135,9 +180,19 @@ const AiAssistant = () => {
           type="submit"
           className="w-full flex items-center justify-center gap-3 bg-primary text-white px-5 py-3 rounded-lg shadow-md hover:bg-secondary transition duration-300 mt-8"
         >
-          <FaPaperPlane /> Gönder
+          <FaPaperPlane /> Değerlendir
         </button>
       </form>
+
+      {/* API cevabını şık bir şekilde göstermek için */}
+      {response && (
+        <div className="mt-8 p-6 border border-neutral-300 rounded bg-gray-50 shadow-lg">
+        <h2 className="text-2xl font-semibold text-primary">Değerlendirme Raporu</h2>
+        <div className="text-neutral-700 mt-4">
+          <ReactMarkdown components={components}>{response}</ReactMarkdown>
+        </div>
+      </div>
+      )}
     </div>
   );
 };
