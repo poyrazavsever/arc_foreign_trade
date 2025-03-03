@@ -1,10 +1,12 @@
 import React from 'react'
+import { Toaster, toast } from 'react-hot-toast'
 
-//Components
+// Components
 import Navbar from './Navbar'
 import Footer from './Footer'
 
 const Layout = ({children}) => {
+
   return (
     <div>
         
@@ -15,6 +17,8 @@ const Layout = ({children}) => {
         </main>
 
         <Footer />
+
+        <Toaster position="top-center" />
       
     </div>
   )
