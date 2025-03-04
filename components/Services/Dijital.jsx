@@ -6,7 +6,7 @@ const Dijital = () => {
     {
       title: 'Sosyal Medya Yönetimi',
       description: 'Markanızı dijitalde büyütmek için içerik, reklam ve etkileşim yönetimi sağlıyoruz.',
-      imageSrc: '/Illus/website-design.png',
+      imageSrc: '/Illus/social-media.png',
       alt: 'Sosyal Medya Yönetimi',
     },
     {
@@ -18,43 +18,43 @@ const Dijital = () => {
     {
       title: 'Grafik Tasarım',
       description: 'Çarpıcı görsellerle etkileyici marka kimliği oluşturuyoruz.',
-      imageSrc: '/Illus/website-design.png',
+      imageSrc: '/Illus/graphic-design.png',
       alt: 'Grafik Tasarım',
     },
     {
       title: 'Takipçi Çalışmaları',
       description: 'Organik büyüme ve etkileşim artırma stratejileri sunuyoruz.',
-      imageSrc: '/Illus/website-design.png',
+      imageSrc: '/Illus/follower.png',
       alt: 'Takipçi Çalışmaları',
     },
     {
       title: 'Ürün Fotoğrafı Çekimi',
       description: 'Ürünlerinizi en iyi şekilde sergileyen profesyonel çekimler yapıyoruz.',
-      imageSrc: '/Illus/website-design.png',
+      imageSrc: '/Illus/photo.png',
       alt: 'Ürün Fotoğrafı Çekimi',
     },
     {
       title: 'SEO Çalışmaları',
       description: 'Arama motorlarında üst sıralara çıkmanız için stratejik optimizasyon yapıyoruz.',
-      imageSrc: '/Illus/website-design.png',
+      imageSrc: '/Illus/seo.png',
       alt: 'SEO Çalışmaları',
     },
     {
       title: 'AdSense (Google Reklam) Çalışmaları',
       description: 'Hedef kitlenize ulaşmanız için etkili reklam kampanyaları oluşturuyoruz.',
-      imageSrc: '/Illus/website-design.png',
+      imageSrc: '/Illus/add.png',
       alt: 'AdSense (Google Reklam) Çalışmaları',
     },
     {
       title: 'B2C Satış Platformlarına Ürün Yükleme',
       description: 'Trendyol, Hepsiburada gibi platformlarda satışınızı yönetiyoruz.',
-      imageSrc: '/Illus/website-design.png',
+      imageSrc: '/Illus/b2c.png',
       alt: 'B2C Satış Platformlarına Ürün Yükleme',
     },
     {
       title: 'Amazon ve eBay Hesap Açılımı',
       description: 'Küresel pazarda yerinizi almak için hesap açma ve yönetim desteği sunuyoruz.',
-      imageSrc: '/Illus/website-design.png',
+      imageSrc: '/Illus/amozon.png',
       alt: 'Amazon ve eBay Hesap Açılımı',
     },
   ];
