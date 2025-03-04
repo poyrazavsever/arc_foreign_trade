@@ -3,16 +3,16 @@ import ServiceCard from './ServiceCard';
 
 const Operation = () => {
   const services = [
-    { title: 'Gümrük', description: 'Gümrük süreçlerinizin sorunsuz ilerlemesi için danışmanlık ve destek sağlıyoruz.', imageSrc: '/Illus/website-design.png', alt: 'Gümrük' },
-    { title: 'Lojistik', description: 'Tedarik zincirinizi optimize ederek maliyetleri düşürüyor ve verimliliği artırıyoruz.', imageSrc: '/Illus/website-design.png', alt: 'Lojistik' },
-    { title: 'Tercüme', description: 'Uluslararası iş süreçleriniz için profesyonel tercüme hizmetleri sunuyoruz.', imageSrc: '/Illus/website-design.png', alt: 'Tercüme' },
-    { title: 'İthalat & İhracat', description: 'İthalat ve ihracat süreçlerinizi yöneterek pazarınızı genişletiyoruz.', imageSrc: '/Illus/website-design.png', alt: 'İthalat & İhracat' },
-    { title: 'Uluslararası Pazar Araştırması', description: 'Yeni pazarlara açılmanız için detaylı pazar analizleri yapıyoruz.', imageSrc: '/Illus/website-design.png', alt: 'Uluslararası Pazar Araştırması' },
-    { title: 'Uluslararası Müşteri Bulma', description: 'Global pazarlarda potansiyel müşterilere ulaşmanıza yardımcı oluyoruz.', imageSrc: '/Illus/website-design.png', alt: 'Uluslararası Müşteri Bulma' },
-    { title: 'Tedarik Zinciri Yönetimi', description: 'Tedarik zincirinizi daha etkin ve sorunsuz yönetmenizi sağlıyoruz.', imageSrc: '/Illus/website-design.png', alt: 'Tedarik Zinciri Yönetimi' },
-    { title: 'E-Ticaret Dijital Pazarlama', description: 'Online satışlarınızı artırmak için dijital pazarlama stratejileri geliştiriyoruz.', imageSrc: '/Illus/website-design.png', alt: 'E-Ticaret Dijital Pazarlama' },
-    { title: 'Veri Analizi ve Raporlama', description: 'İş süreçlerinizi geliştirmek için veri analizi ve raporlama hizmetleri sunuyoruz.', imageSrc: '/Illus/website-design.png', alt: 'Veri Analizi ve Raporlama' },
-    { title: 'Uluslararası Fiyat Araştırması', description: 'Pazardaki fiyatları analiz ederek rekabet avantajı sağlıyoruz.', imageSrc: '/Illus/website-design.png', alt: 'Uluslararası Fiyat Araştırması' },
+    { title: 'Gümrük', description: 'Gümrük süreçlerinizin sorunsuz ilerlemesi için danışmanlık ve destek sağlıyoruz.', imageSrc: '/Illus/customs.png', alt: 'Gümrük' },
+    { title: 'Lojistik', description: 'Tedarik zincirinizi optimize ederek maliyetleri düşürüyor ve verimliliği artırıyoruz.', imageSrc: '/Illus/logistic.png', alt: 'Lojistik' },
+    { title: 'Tercüme', description: 'Uluslararası iş süreçleriniz için profesyonel tercüme hizmetleri sunuyoruz.', imageSrc: '/Illus/translation.png', alt: 'Tercüme' },
+    { title: 'İthalat & İhracat', description: 'İthalat ve ihracat süreçlerinizi yöneterek pazarınızı genişletiyoruz.', imageSrc: '/Illus/imports.png', alt: 'İthalat & İhracat' },
+    { title: 'Uluslararası Pazar Araştırması', description: 'Yeni pazarlara açılmanız için detaylı pazar analizleri yapıyoruz.', imageSrc: '/Illus/resarch.png', alt: 'Uluslararası Pazar Araştırması' },
+    { title: 'Uluslararası Müşteri Bulma', description: 'Global pazarlarda potansiyel müşterilere ulaşmanıza yardımcı oluyoruz.', imageSrc: '/Illus/customer2.png', alt: 'Uluslararası Müşteri Bulma' },
+    { title: 'Tedarik Zinciri Yönetimi', description: 'Tedarik zincirinizi daha etkin ve sorunsuz yönetmenizi sağlıyoruz.', imageSrc: '/Illus/supply.png', alt: 'Tedarik Zinciri Yönetimi' },
+    { title: 'E-Ticaret Dijital Pazarlama', description: 'Online satışlarınızı artırmak için dijital pazarlama stratejileri geliştiriyoruz.', imageSrc: '/Illus/ecommerce.png', alt: 'E-Ticaret Dijital Pazarlama' },
+    { title: 'Veri Analizi ve Raporlama', description: 'İş süreçlerinizi geliştirmek için veri analizi ve raporlama hizmetleri sunuyoruz.', imageSrc: '/Illus/data.png', alt: 'Veri Analizi ve Raporlama' },
+    { title: 'Uluslararası Fiyat Araştırması', description: 'Pazardaki fiyatları analiz ederek rekabet avantajı sağlıyoruz.', imageSrc: '/Illus/price.png', alt: 'Uluslararası Fiyat Araştırması' },
   ];
 
   return (
