@@ -5,26 +5,24 @@ const Team = () => {
   const teamMembers = [
     {
       name: 'Buğrahan Arıcı',
-      role: 'Kurucu',
-      description: 'Açıklama Açıklama Açıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama',
+      role: 'CEO & Founder',
+      description: 'Stratejik bakış açısıyla ekibi yönlendiren, inovasyonu teşvik eden ve projeleri ileriye taşıyan isim.',
       image: '/Team/bugrahan.jpeg',
-      instagram: 'https://www.instagram.com/bugrahanarici',
-      twitter: 'https://twitter.com/bugrahanarici',
+      instagram: 'https://www.instagram.com/bugrahan_arc/',
       linkedin: 'https://www.linkedin.com/in/bugrahanarici',
     },
     {
       name: 'Poyraz Avsever',
-      role: 'Yazılım Geliştirici',
-      description: 'Açıklama Açıklama Açıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama',
+      role: 'Software Developer',
+      description: 'Güçlü ve sürdürülebilir yazılım çözümleri geliştiren, teknolojiyi en verimli şekilde kullanan uzman.',
       image: '/Team/poyraz.jpeg',
-      instagram: 'https://www.instagram.com/poyrazavsever',
-      twitter: 'https://twitter.com/poyrazavsever',
+      instagram: 'https://www.instagram.com/p.avsever',
       linkedin: 'https://www.linkedin.com/in/poyrazavsever',
     },
     {
       name: 'Rafet Nuriyev',
-      role: 'Pazarlama Sorumlusu',
-      description: 'Açıklama Açıklama Açıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama',
+      role: 'Marketing Coordinator',
+      description: 'Markanın doğru kitleye ulaşmasını sağlayan, pazarlama stratejilerini şekillendiren ve büyümeyi hızlandıran profesyonel.',
       image: '/Images/herosection.jpg',
       instagram: 'https://www.instagram.com/rafetnuriyev',
       twitter: 'https://twitter.com/rafetnuriyev',
@@ -32,12 +30,11 @@ const Team = () => {
     },
     {
       name: 'Doğukan Efe Ersoy',
-      role: 'Sosyal Medya Sorumlusu',
-      description: 'Açıklama Açıklama Açıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama',
+      role: 'Graphic Designer',
+      description: 'Estetik ve iletişim dilini belirleyen, etkileyici tasarımlarla projelere kimlik kazandıran sanatçı.',
       image: '/Team/dogukan.jpeg',
-      instagram: 'https://www.instagram.com/dogukanefeersoy',
-      twitter: 'https://twitter.com/dogukanefeersoy',
-      linkedin: 'https://www.linkedin.com/in/dogukanefeersoy',
+      instagram: 'https://www.instagram.com/dogukan.ers',
+      linkedin: 'https://www.linkedin.com/in/do%C4%9Fukan-ersoy-76a318267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_appy',
     },
   ];
 
@@ -65,15 +62,15 @@ const Team = () => {
               <p className="text-gray-600 mb-2">{member.role}</p>
               <p className="text-gray-600 mb-4">{member.description}</p>
               <div className="flex justify-start space-x-4">
-                <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-lg text-gray-600 hover:text-gray-800">
+                {member.instagram ? <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-lg text-gray-600 hover:text-gray-800">
                   <FaInstagram />
-                </a>
-                <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="text-lg text-gray-600 hover:text-gray-800">
+                </a> : ""}
+                {member.twitter ? <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="text-lg text-gray-600 hover:text-gray-800">
                   <FaTwitter />
-                </a>
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-lg text-gray-600 hover:text-gray-800">
+                </a> : ""}
+                {member.linkedin ? <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-lg text-gray-600 hover:text-gray-800">
                   <FaLinkedinIn />
-                </a>
+                </a> : ""}
               </div>
             </div>
           ))}
