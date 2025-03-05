@@ -25,7 +25,7 @@ const Team = () => {
       name: 'Rafet Nuriyev',
       role: 'Pazarlama Sorumlusu',
       description: 'Açıklama Açıklama Açıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama AçıklamaAçıklama',
-      image: '/Images/herosection.png',
+      image: '/Images/herosection.jpg',
       instagram: 'https://www.instagram.com/rafetnuriyev',
       twitter: 'https://twitter.com/rafetnuriyev',
       linkedin: 'https://www.linkedin.com/in/rafetnuriyev',
