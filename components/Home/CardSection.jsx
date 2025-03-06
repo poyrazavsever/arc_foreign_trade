@@ -49,9 +49,12 @@ const CardSection = () => {
           <p className="text-gray-600 mb-8">
             Küresel pazara açılmak karmaşık görünebilir. İşte bu yüzden, ARC olarak yalnızca bir danışman değil, sizin dış ticaret departmanınız oluyoruz. Hedef pazar analizinizden, satış ve operasyon süreçlerinize kadar her adımda yanınızdayız. Afrika ve Asya'dan gelen uzman ekibimizle markanızı uluslararası başarıya taşıyoruz.
           </p>
-          <button className="bg-primary text-white px-6 py-3 hover:bg-secondary transition">
-            İlk Adımı Atın
-          </button>
+
+          <a href='/ai-assistant'>
+            <button className="bg-primary text-white px-6 py-3 hover:bg-secondary transition">
+              İlk Adımı Atın
+            </button>
+          </a>
         </div>
       </div>
     </div>
