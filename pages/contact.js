@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaInstagram} from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-hot-toast';
 
 const Contact = () => {
   // State tanımlamaları
@@ -12,60 +14,94 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({
+  
+    // Yükleniyor toast mesajı
+    toast.loading('Gönderiliyor...', { id: 'loading' });
+  
+    // Form verilerini bir nesneye toplayalım
+    const formData = {
       name,
       surname,
       email,
       phone,
       topic,
       message,
-    });
+    };
+  
+    // EmailJS ile formu gönderme
+    emailjs
+      .send(
+        'service_nswtoxh', // Service ID
+        'template_vl17k6e', // Template ID
+        formData, // Form verilerini nesne olarak gönderiyoruz
+        'aQxL6h9n3Y7K-qnm3' // Public Key
+      )
+      .then(
+        (result) => {
+          // Başarılı toast mesajı
+          toast.success('Mesajınız başarıyla gönderildi!', { id: 'loading' });
+        },
+        (error) => {
+          // Hata toast mesajı
+          toast.error('Mesaj gönderilirken bir hata oluştu!', { id: 'loading' });
+        }
+      );
   };
-
+  
   return (
     <div className="container mx-auto flex flex-col md:flex-row mt-36">
       {/* Sol Bölüm (İletişim Bilgileri) */}
       <div className="md:w-1/3 bg-primary text-white p-8 relative">
-        <div className='flex flex-col items-start gap-4 mb-4'>
-            <h2 className="text-2xl font-bold mb-4">İletişim Bilgileri</h2>
-            <p className="mb-6">Bizimle iletişime 7/24 geçebilirsiniz!</p>
+        <div className="flex flex-col items-start gap-4 mb-4">
+          <h2 className="text-2xl font-bold mb-4">İletişim Bilgileri</h2>
+          <p className="mb-6">Bizimle iletişime 7/24 geçebilirsiniz!</p>
         </div>
 
-        <div className='flex flex-col items-start gap-8'>
-            <div className="flex items-center gap-4 mb-4">
-                <FaPhoneAlt className="h-6 w-6 mr-2" />
-                <a href="tel:+905316967868 " className="text-white">0531 696 78 68 </a>
-            </div>
+        <div className="flex flex-col items-start gap-8">
+          <div className="flex items-center gap-4 mb-4">
+            <FaPhoneAlt className="h-6 w-6 mr-2" />
+            <a href="tel:+905316967868 " className="text-white">
+              0531 696 78 68
+            </a>
+          </div>
 
-            <div className="flex items-center gap-4 mb-4">
-                <FaEnvelope className="h-6 w-6 mr-2" />
-                <a href="mailto:info@arcforeigntrade.com" className="text-white">info@arcforeigntrade.com</a>
-            </div>
-            
-            <div className="flex items-start gap-4 mb-4">
-                <FaMapMarkerAlt className="h-6 w-6 mr-2" />
-                <a
-                  href="https://www.google.com/maps?q=Ostim+OSB+Ostim+Prestij+İş+Merkezi,+2.Kat+No.19,+Yenimahalle+%2F+ANKARA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white"
-                >
-                  Ostim OSB Ostim Prestij İş Merkezi <br />
-                  2.Kat No.19 Yenimahalle / ANKARA
-                </a>
-            </div>
+          <div className="flex items-center gap-4 mb-4">
+            <FaEnvelope className="h-6 w-6 mr-2" />
+            <a href="mailto:info@arcforeigntrade.com" className="text-white">
+              info@arcforeigntrade.com
+            </a>
+          </div>
+
+          <div className="flex items-start gap-4 mb-4">
+            <FaMapMarkerAlt className="h-6 w-6 mr-2" />
+            <a
+              href="https://www.google.com/maps?q=Ostim+OSB+Ostim+Prestij+İş+Merkezi,+2.Kat+No.19,+Yenimahalle+%2F+ANKARA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white"
+            >
+              Ostim OSB Ostim Prestij İş Merkezi <br />
+              2.Kat No.19 Yenimahalle / ANKARA
+            </a>
+          </div>
         </div>
 
         <div className="flex items-center gap-4 space-x-4 mt-16">
-
-          <a href="https://www.linkedin.com/company/arc-foreign-trade" target="_blank" className="bg-white rounded-full p-2 group hover:bg-secondary transition-all">
+          <a
+            href="https://www.linkedin.com/company/arc-foreign-trade"
+            target="_blank"
+            className="bg-white rounded-full p-2 group hover:bg-secondary transition-all"
+          >
             <FaLinkedin className="h-6 w-6 text-primary group-hover:text-white transition-all" />
           </a>
 
-          <a href="https://www.instagram.com/arcforeigntrade/" target="_blank" className="bg-white rounded-full p-2 group hover:bg-pink-500 transition-all">
+          <a
+            href="https://www.instagram.com/arcforeigntrade/"
+            target="_blank"
+            className="bg-white rounded-full p-2 group hover:bg-pink-500 transition-all"
+          >
             <FaInstagram className="h-6 w-6 text-primary group-hover:text-white transition-all" />
           </a>
-
         </div>
       </div>
 
