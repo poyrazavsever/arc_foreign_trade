@@ -6,98 +6,14 @@ const Blog = () => {
   const blogs = [
     {
       id: 1,
-      title: 'En son yenilikler hakkında',
-      author: 'Mehmet Yılmaz',
-      date: '2025-03-01',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: '/Images/herosection.jpg',
-      authorImage: '/Images/herosection.jpg',
-      time: '5 Dakikalık Okuma',
-      category: 'Teknoloji',
-      isPopular: true,
-    },
-    {
-      id: 2,
-      title: 'Teknoloji dünyasında yeni trendler',
-      author: 'Ali Kaan',
-      date: '2025-02-25',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: '/Images/herosection.jpg',
-      authorImage: '/Images/herosection.jpg',
-      time: '5 Dakikalık Okuma',
-      category: 'Teknoloji',
-      isPopular: false,
-    },
-    {
-      id: 3,
-      title: 'Yazılımda en iyi pratikler',
-      author: 'Zeynep Çelik',
-      date: '2025-01-15',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: '/Images/herosection.jpg',
-      authorImage: '/Images/herosection.jpg',
-      time: '5 Dakikalık Okuma',
-      category: 'Teknoloji',
-      isPopular: true,
-    },
-    {
-      id: 4,
-      title: 'Yapay zeka gelişmeleri',
-      author: 'Ömer Faruk',
-      date: '2025-02-10',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: '/Images/herosection.jpg',
-      authorImage: '/Images/herosection.jpg',
-      time: '5 Dakikalık Okuma',
-      category: 'Teknoloji',
-      isPopular: false,
-    },
-    {
-      id: 5,
-      title: 'Yeni nesil yapay zeka teknolojileri',
-      author: 'Fatma Aksoy',
-      date: '2025-03-02',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: '/Images/herosection.jpg',
-      authorImage: '/Images/herosection.jpg',
-      time: '5 Dakikalık Okuma',
-      category: 'Teknoloji',
-      isPopular: false,
-    },
-    {
-      id: 6,
-      title: 'Yazılım geliştirmede dikkat edilmesi gerekenler',
-      author: 'Mehmet Yılmaz',
-      date: '2025-02-22',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: '/Images/herosection.jpg',
-      authorImage: '/Images/herosection.jpg',
-      time: '5 Dakikalık Okuma',
-      category: 'Teknoloji',
-      isPopular: true,
-    },
-    {
-      id: 7,
-      title: 'Veritabanı yönetimi ve en iyi uygulamalar',
-      author: 'Zeynep Çelik',
-      date: '2025-01-20',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: '/Images/herosection.jpg',
-      authorImage: '/Images/herosection.jpg',
-      time: '5 Dakikalık Okuma',
-      category: 'Teknoloji',
-      isPopular: false,
-    },
-    {
-      id: 8,
-      title: 'Front-end gelişmeleri',
-      author: 'Ali Kaan',
-      date: '2025-02-18',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: '/Images/herosection.jpg',
-      authorImage: '/Images/herosection.jpg',
-      time: '5 Dakikalık Okuma',
-      category: 'Teknoloji',
+      title: 'Global Pazara Açılmak: İlk Adımlar ve Stratejiler',
+      author: 'Buğrahan Arıcı',
+      date: '10/03/2025',
+      content: '../../contents/1.md',
+      imageUrl: '/ContentImage/1.jpg',
+      authorImage: '/Team/bugrahan.jpeg',
+      time: '4 Dakikalık Okuma',
+      category: 'Pazarlama',
       isPopular: true,
     },
   ];
@@ -152,6 +68,7 @@ const Blog = () => {
           {popularPosts.map((post) => (
             <BlogCard
               key={post.id}
+              id = {post.id}
               time={post.time}
               date={post.date}
               title={post.title}
@@ -176,11 +93,13 @@ const Blog = () => {
           {currentPosts.map((post) => (
             <BlogCard
               key={post.id}
+              id = {post.id}
               time={post.time}
               date={post.date}
               title={post.title}
               author={post.author}
               authorDate={post.date}
+              authorImage={post.authorImage}
               imageUrl={post.imageUrl}
               category={post.category}
             />
