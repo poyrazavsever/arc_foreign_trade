@@ -3,12 +3,7 @@ import ProductCard from './ProductCard';
 import { FaSearch, FaList, FaTh } from 'react-icons/fa';
 
 const CustomerProducts = () => {
-  const allProducts = Array.from({ length: 20 }, (_, i) => ({
-    category: `Kategori ${i + 1}`,
-    title: `Ürün ${i + 1}`,
-    imageSrc: '/Images/product.jpg',
-    alt: `Ürün ${i + 1}`,
-  }));
+  const allProducts = [];
 
   const [searchQuery, setSearchQuery] = useState('');
   const [productsPerPage, setProductsPerPage] = useState(8);
@@ -33,7 +28,7 @@ const CustomerProducts = () => {
   };
 
   return (
-    <div className="bg-white py-10">
+    <div className="bg-white py-36">
       <div className="container mx-auto px-4">
 
         {/* Başlık */}
@@ -89,18 +84,25 @@ const CustomerProducts = () => {
           </div>
         </div>
 
-        {/* Ürün Listesi */}
-        <div className={`grid gap-6 ${layout === 'grid' ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : 'grid-cols-1'}`}>
-          {displayedProducts.map((product, index) => (
-            <ProductCard
-              key={index}
-              category={product.category}
-              title={product.title}
-              imageSrc={product.imageSrc}
-              alt={product.alt}
-            />
-          ))}
-        </div>
+        {/* Ürün Listesi veya Uyarı */}
+        {filteredProducts.length === 0 ? (
+          <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6" role="alert">
+            <p className="font-bold">Şu an herhangi bir ürün bulunmamaktadır.</p>
+            <p>Yeni ürünler eklendiğinde burada görüntüleyebilirsiniz.</p>
+          </div>
+        ) : (
+          <div className={`grid gap-6 ${layout === 'grid' ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : 'grid-cols-1'}`}>
+            {displayedProducts.map((product, index) => (
+              <ProductCard
+                key={index}
+                category={product.category}
+                title={product.title}
+                imageSrc={product.imageSrc}
+                alt={product.alt}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Sayfalandırma */}
         {totalPages > 1 && (
