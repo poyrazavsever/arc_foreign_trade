@@ -32,7 +32,7 @@
     
     .animate-scroll {
       display: flex;
-      animation: scroll-left 24s linear infinite;
+      animation: scroll-left 16s linear infinite;
     }
     
     /* Animasyon tanımı */
