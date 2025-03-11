@@ -70,7 +70,7 @@ const Navbar = () => {
           </Link>
           <Link href="/ai-assistant" onClick={closeMenu}>
             <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/ai-assistant" ? "text-secondary" : ""}`}>
-              Akıllı Asistan
+              Dijital Danışman
             </span>
           </Link>
           <Link href="/contact" onClick={closeMenu}>

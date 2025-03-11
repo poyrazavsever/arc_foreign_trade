@@ -106,8 +106,8 @@ const AiAssistant = () => {
   return (
     <div className="max-w-3xl mx-auto p-8 border border-neutral-200 rounded-xl mt-48 bg-white shadow-lg">
       <div className="flex flex-col items-start gap-2 mb-6">
-        <h1 className="text-3xl font-bold text-left text-primary">Akıllı Asistan</h1>
-        <p className="text-neutral-500">Yapay zeka destekli danışmanımıza hoş geldiniz!</p>
+        <h1 className="text-3xl font-bold text-left text-primary">Dijital Danışman</h1>
+        <p className="text-neutral-500">Yapay zeka destekli danışmanımıza hoş geldiniz! Burada bilgilerini gir ve anında geri dönüş al. Şirketinde nelerin eksik olduğunu ve bu eksikliği nasıl giderebileceğini öğren.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col items-start gap-6 w-full">
