@@ -13,7 +13,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="relative h-[700px] mt-24 mb-12 md:mb-24">
+    <div className="relative h-[700px] mt-24 mb-42 md:mb-24">
       {/* Slider Bölümü */}
       <Swiper
         modules={[EffectFade, Autoplay]}
@@ -33,7 +33,8 @@ const HeroSection = () => {
       </Swiper>
 
       {/* Metin Bölümü */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-8 text-white z-50">
+      <div className="absolute -bottom-48 inset-0 flex flex-col justify-center items-center text-center px-8 text-white z-40">
+
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
           Markanızı Güçlendirin, Dünyaya Açılın!
         </h1>
@@ -55,7 +56,21 @@ const HeroSection = () => {
             </button>
           </a>
         </div>
+
+        <div className='w-full md:w-1/2 bg-blue-50 backdrop-blur-3xl border border-neutral-200 shadow-xl py-12 px-8 mt-16 flex flex-col items-center justify-center gap-8 rounded-lg'>
+          <h2 className='text-neutral-900 font-medium text-base md:text-xl'>Dijital Danışman butonuna tıklayarak, sektörünüze ve firmanızın güncel durumuna özel dış ticaret raporunuzu saniyeler içinde <span className='font-bold text-primary'>ÜCRETSİZ</span> olarak oluşturun!</h2>
+
+          <a href="/ai-assistant">
+            <button className="bg-primary text-white text-xl px-6 py-3 hover:bg-blue-700 transition cursor-pointer">
+              Dijital Danışman
+            </button>
+          </a>
+
+        </div>
+
       </div>
+
+      
     </div>
   );
 };
