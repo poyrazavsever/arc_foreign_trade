@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { toast } from "react-hot-toast";
@@ -104,6 +105,50 @@ const AiAssistant = () => {
   };
 
   return (
+
+    <>
+    
+    <Head>
+      {/* 📌 Genel SEO Meta Etiketleri */}
+      <title>Dijital Danışman - ARC Foreign Trade - Sorularınızı Cevaplayalım!</title>
+      <meta
+        name="description"
+        content="Yapay zeka destekli dijital danışman ile şirketinizin eksiklerini keşfedin ve gelişen dijital çözümlerle işinizi büyütün. ARC Foreign Trade'in sunduğu danışmanlık hizmetlerine göz atın."
+      />
+      <meta
+        name="keywords"
+        content="dijital danışman, yapay zeka danışmanı, ARC Foreign Trade, dijital çözümler, iş geliştirme, iş stratejileri, teknoloji çözümleri"
+      />
+      <meta name="author" content="ARC Foreign Trade" />
+      <meta name="robots" content="index, follow" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="canonical" href="https://www.arcforeigntrade.com/dijital-danisman" />
+
+      {/* 📌 Open Graph Meta Etiketleri (Facebook & LinkedIn) */}
+      <meta property="og:title" content="Dijital Danışman - ARC Foreign Trade" />
+      <meta
+        property="og:description"
+        content="Yapay zeka destekli dijital danışmanımız ile şirketinizin eksiklerini hızla analiz edin ve gelişen dijital çözümlerle daha hızlı büyüyün. ARC Foreign Trade danışmanlık hizmetleriyle tanışın."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.arcforeigntrade.com/dijital-danisman" />
+      <meta property="og:image" content="https://www.arcforeigntrade.com/assets/dijital-danisman.jpg" />
+      <meta property="og:site_name" content="ARC Foreign Trade" />
+
+      {/* 📌 Twitter Card Meta Etiketleri */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Dijital Danışman - ARC Foreign Trade" />
+      <meta
+        name="twitter:description"
+        content="İşinizi dijital çözümlerle büyütün. Yapay zeka destekli dijital danışmanımızla eksikliklerinizi keşfedin ve işinizi daha verimli hale getirin."
+      />
+      <meta name="twitter:image" content="https://www.arcforeigntrade.com/assets/dijital-danisman.jpg" />
+      <meta name="twitter:site" content="@arcforeigntrade" />
+
+      {/* 📌 Favicon */}
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+
     <div className="max-w-3xl mx-auto p-8 border border-neutral-200 rounded-xl mt-48 bg-white shadow-lg">
       <div className="flex flex-col items-start gap-2 mb-6">
         <h1 className="text-3xl font-bold text-left text-primary">Dijital Danışman</h1>
@@ -194,6 +239,8 @@ const AiAssistant = () => {
       </div>
       )}
     </div>
+
+    </>
   );
 };
 

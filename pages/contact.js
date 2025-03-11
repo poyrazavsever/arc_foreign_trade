@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { useState } from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
@@ -50,6 +51,30 @@ const Contact = () => {
   
   return (
     <div className="container mx-auto flex flex-col md:flex-row mt-36">
+      <Head>
+        <title>İletişim | ARC Foreign Trade | Bize sorularınızı sorun!</title>
+        <meta name="description" content="ARC Foreign Trade ile iletişime geçin. Danışmanlık, reklam, pazarlama ve genel konular için bizimle bağlantıya geçin." />
+        <meta name="keywords" content="ARC Foreign Trade, ticaret, danışmanlık, pazarlama, iletişim" />
+        <meta name="author" content="ARC Foreign Trade" />
+        
+        {/* Open Graph Meta Tags (Facebook, LinkedIn vb.) */}
+        <meta property="og:title" content="İletişim | ARC Foreign Trade" />
+        <meta property="og:description" content="Bizimle iletişime geçerek ticaret, danışmanlık, reklam ve pazarlama alanlarında destek alabilirsiniz!" />
+        <meta property="og:image" content="https://www.arcforeigntrade.com/images/contact-banner.jpg" />
+        <meta property="og:url" content="https://www.arcforeigntrade.com/iletisim" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="İletişim | ARC Foreign Trade" />
+        <meta name="twitter:description" content="Bizimle iletişime geçerek ticaret, danışmanlık, reklam ve pazarlama alanlarında destek alabilirsiniz!" />
+        <meta name="twitter:image" content="https://www.arcforeigntrade.com/images/contact-banner.jpg" />
+
+        {/* Mobil Uyumluluk */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+
+
       {/* Sol Bölüm (İletişim Bilgileri) */}
       <div className="md:w-1/3 bg-primary text-white p-8 relative">
         <div className="flex flex-col items-start gap-4 mb-4">
