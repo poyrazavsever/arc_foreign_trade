@@ -1,23 +1,10 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
 import BlogCard from '@/components/Blog/BlogCard';
+import { blogs } from '@/blogs';
 
 const Blog = () => {
 
-  const blogs = [
-    {
-      id: 1,
-      title: 'Global Pazara Açılmak: İlk Adımlar ve Stratejiler',
-      author: 'Buğrahan Arıcı',
-      date: '10/03/2025',
-      content: '../../contents/1.md',
-      imageUrl: '/ContentImage/1.jpg',
-      authorImage: '/Team/bugrahan.jpeg',
-      time: '4 Dakikalık Okuma',
-      category: 'Pazarlama',
-      isPopular: true,
-    },
-  ];
 
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;

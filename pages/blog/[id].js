@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { blogs } from '@/blogs';
+
 
 const BlogDetail = () => {
   const router = useRouter();
@@ -10,20 +12,7 @@ const BlogDetail = () => {
   const [content, setContent] = useState('');
   const [blog, setBlog] = useState(null); // Blog verisini saklamak için state ekliyoruz.
 
-  const blogs = [
-    {
-      id: 1,
-      title: 'Global Pazara Açılmak: İlk Adımlar ve Stratejiler',
-      author: 'Buğrahan Arıcı',
-      date: '10/03/2025',
-      content: '../../contents/1.md',
-      imageUrl: '/ContentImage/1.jpg',
-      authorImage: '/Team/bugrahan.jpeg',
-      time: '4 Dakikalık Okuma',
-      category: 'Pazarlama',
-      isPopular: true,
-    },
-  ];
+  
 
   useEffect(() => {
     if (id) {
