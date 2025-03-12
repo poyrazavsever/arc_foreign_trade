@@ -4,18 +4,20 @@ import BlogCard from '@/components/Blog/BlogCard';
 import { blogs } from '@/blogs';
 
 const Blog = () => {
-
-
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
 
-  // Popüler postları filtrele
-  const popularPosts = blogs.filter((post) => post.isPopular);
+  // Blogları ID'ye göre azalan sırayla sıralama (yeniler öne çıkar)
+  const sortedBlogs = [...blogs].sort((a, b) => b.id - a.id);
+
+  // Popüler postları filtrele (önceden sıralanmış diziden)
+  const popularPosts = sortedBlogs.filter((post) => post.isPopular);
 
   // Sayfalama işlemi
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = sortedBlogs.slice(indexOfFirstPost, indexOfLastPost);
+
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -74,10 +76,10 @@ const Blog = () => {
     <main>
       <div className="w-full container mx-auto my-24 px-4">
 
-  {/* En Son Yüklenen Post */}
-  <div className="w-full h-96 relative mb-8">
+    {/* En Son Yüklenen Post */}
+    <div className="w-full h-96 relative mb-8">
     <img
-      src={blogs[0]?.imageUrl}
+      src={(popularPosts.length > 0 ? popularPosts[0] : sortedBlogs[0])?.imageUrl}
       alt="Blog"
       className="w-full h-full object-cover rounded-lg"
     />
@@ -85,11 +87,14 @@ const Blog = () => {
     <div className="absolute inset-0 bg-black opacity-70"></div>
 
     <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-      <h2 className="text-2xl md:text-4xl font-bold mb-4">{blogs[0]?.title}</h2>
-      <p className="text-lg">{blogs[0]?.author}</p>
-      <p className="text-sm">{blogs[0]?.date}</p>
+      <h2 className="text-2xl md:text-4xl font-bold mb-4">
+        {(popularPosts.length > 0 ? popularPosts[0] : sortedBlogs[0])?.title}
+      </h2>
+      <p className="text-lg">{(popularPosts.length > 0 ? popularPosts[0] : sortedBlogs[0])?.author}</p>
+      <p className="text-sm">{(popularPosts.length > 0 ? popularPosts[0] : sortedBlogs[0])?.date}</p>
     </div>
   </div>
+
 
   {/* Popüler Postlar */}
   <div className="mb-24">
