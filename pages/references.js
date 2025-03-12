@@ -35,8 +35,8 @@ const References = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Testimonials />
+      <main className='mt-48'>
+        { /*<Testimonials />*/ } 
         <Company />
       </main>
     </>
