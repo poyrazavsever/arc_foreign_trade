@@ -19,13 +19,37 @@ const Team = () => {
       name: 'Rafet Nuriyev',
       role: 'Pazarlama Kordinatörü',
       description: 'Markanın doğru kitleye ulaşmasını sağlayan, pazarlama stratejilerini şekillendiren ve büyümeyi hızlandıran profesyonel.',
-      image: '/Images/herosection.jpg',
+      image: '/Team/rafet.jpeg',
     },
     {
       name: 'Doğukan Efe Ersoy',
       role: 'Grafik Tasarımcı',
       description: 'Estetik ve iletişim dilini belirleyen, etkileyici tasarımlarla projelere kimlik kazandıran sanatçı.',
       image: '/Team/dogukan.jpeg',
+    },
+    {
+      name: 'Nare Dite Dede Keita',
+      role: 'Stajyer',
+      description: 'Takımın gelişimine katkı sağlayan, öğrenmeye açık ve yenilikçi bir stajyer.',
+      image: '/Team/nare.jpeg',
+    },
+    {
+      name: 'Zeeyad Sani Adamu',
+      role: 'Stajyer',
+      description: 'Teknoloji ve iş dünyasında kendini geliştiren, dinamik bir stajyer.',
+      image: '/Team/zeeyad.jpeg',
+    },
+    {
+      name: 'Suliaman Muhammad',
+      role: 'Stajyer',
+      description: 'Yenilikçi fikirleriyle ekibe enerji katan, istekli bir stajyer.',
+      image: '/Team/suliaman.jpeg',
+    },
+    {
+      name: 'Selwa Ismail Kayad',
+      role: 'Stajyer',
+      description: 'Yaratıcı bakış açısıyla projelere katkı sağlayan bir stajyer.',
+      image: '/Team/selwa.jpeg',
     },
   ];
 
