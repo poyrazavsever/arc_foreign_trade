@@ -13,7 +13,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="relative h-[700px] mt-24 mb-42 md:mb-24">
+    <div className="relative h-[700px] mb-42 md:mb-24">
       {/* Slider Bölümü */}
       <Swiper
         modules={[EffectFade, Autoplay]}

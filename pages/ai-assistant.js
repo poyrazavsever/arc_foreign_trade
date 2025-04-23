@@ -149,7 +149,7 @@ const AiAssistant = () => {
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <div className="max-w-3xl mx-auto p-8 border border-neutral-200 rounded-xl mt-48 bg-white shadow-lg">
+    <div className="max-w-3xl mx-auto p-8 border border-neutral-200 rounded-xl bg-white shadow-lg mt-16">
       <div className="flex flex-col items-start gap-2 mb-6">
         <h1 className="text-3xl font-bold text-left text-primary">Dijital Danışman</h1>
         <p className="text-neutral-500">Yapay zeka destekli danışmanımıza hoş geldiniz! Burada bilgilerini gir ve anında geri dönüş al. Şirketinde nelerin eksik olduğunu ve bu eksikliği nasıl giderebileceğini öğren.</p>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const MainSection = () => {
   return (
-    <div className="bg-white py-16 mt-24 md:mt-36">
+    <div className="bg-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Sol Bölüm: Bizi Tanıyın */}

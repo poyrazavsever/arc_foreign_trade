@@ -49,7 +49,7 @@ const Services = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className='mt-16'>
           <Populars />
           <Dijital />
           <Marketing />
