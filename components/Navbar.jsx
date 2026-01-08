@@ -3,11 +3,25 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa"; // React Icons importu
+import {
+  FaBars,
+  FaTimes,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+} from "react-icons/fa"; // React Icons importu
 
 const Navbar = () => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const phoneNumber = "+90 000 000 00 00";
+  const emailAddress = "info@arcdisticaret.com";
+  const socialLinks = [
+    { name: "Instagram", href: "#", Icon: FaInstagram },
+    { name: "LinkedIn", href: "#", Icon: FaLinkedinIn },
+    { name: "WhatsApp", href: "#", Icon: FaWhatsapp },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,74 +32,144 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-sm fixed top-0 left-0 w-full z-50">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        {/* Logo */}
-        <Link href="/">
-          <Image src="/Images/Logo.png" alt="ARC Dış Ticaret Logo" width={150} height={50} />
-        </Link>
+    <nav className="bg-white fixed top-0 left-0 w-full z-50">
+      {/* Top: Logo + İletişim */}
+      <div className="bg-white">
+        <div className="container mx-auto flex justify-between items-center py-4 px-6">
+          <div className="flex items-center gap-6">
+            <Link href="/" onClick={closeMenu}>
+              <Image
+                src="/Images/Logo.png"
+                alt="ARC Dış Ticaret Logo"
+                width={150}
+                height={50}
+              />
+            </Link>
 
-        {/* Hamburger Icon */}
-        <div className="md:hidden flex items-center">
-          <button onClick={toggleMenu} className="text-neutral-700">
-            {isMenuOpen ? (
-              <FaTimes size={24} />
-            ) : (
-              <FaBars size={24} />
-            )}
-          </button>
+            <div className="hidden sm:flex flex-row items-center gap-4">
+              <a
+                href={`tel:${phoneNumber.replace(/\s/g, "")}`}
+                className="text-neutral-700 hover:text-secondary"
+              >
+                {phoneNumber}
+              </a>
+              <a
+                href={`mailto:${emailAddress}`}
+                className="text-neutral-700 hover:text-secondary"
+              >
+                {emailAddress}
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="hidden sm:flex items-center gap-3">
+              {socialLinks.map(({ name, href, Icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  aria-label={name}
+                  className="text-neutral-700 hover:text-secondary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
+
+            {/* Hamburger Icon */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={toggleMenu}
+                className="text-neutral-700"
+                aria-label="Menüyü aç/kapat"
+              >
+                {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
 
-        {/* Menü Linkleri (Desktop) */}
-        <div className="hidden md:flex space-x-6">
-          <Link href="/" onClick={closeMenu}>
-            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/" ? "text-secondary" : ""}`}>
-              Ana Sayfa
-            </span>
-          </Link>
-          <Link href="/about" onClick={closeMenu}>
-            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/about" ? "text-secondary" : ""}`}>
-              Hakkımızda
-            </span>
-          </Link>
-          <Link href="/services" onClick={closeMenu}>
-            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/services" ? "text-secondary" : ""}`}>
-              Hizmetlerimiz
-            </span>
-          </Link>
-          <Link href="/products" onClick={closeMenu}>
-            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/products" ? "text-secondary" : ""}`}>
-              Ürünler
-            </span>
-          </Link>
-          <Link href="/references" onClick={closeMenu}>
-            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/references" ? "text-secondary" : ""}`}>
-              Referanslar
-            </span>
-          </Link>
-          <Link href="/blog" onClick={closeMenu}>
-            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/blog" ? "text-secondary" : ""}`}>
-              Blog
-            </span>
-          </Link>
-          <Link href="/ai-assistant" onClick={closeMenu}>
-            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/ai-assistant" ? "text-secondary" : ""}`}>
-              Dijital Danışman
-            </span>
-          </Link>
-          <Link href="/contact" onClick={closeMenu}>
-            <span className={`text-neutral-700 hover:text-secondary ${router.pathname === "/contact" ? "text-secondary" : ""}`}>
-              İletişim
-            </span>
-          </Link>
+      {/* Bottom: Linkler */}
+      <div className="bg-primary">
+        <div className="container mx-auto hidden md:flex justify-between items-center py-3 px-6">
+          <div className="flex items-center gap-6">
+            <Link href="/" onClick={closeMenu}>
+              <span
+                className={`text-white hover:text-white/80 ${
+                  router.pathname === "/" ? "underline" : ""
+                }`}
+              >
+                Ana Sayfa
+              </span>
+            </Link>
+            <Link href="/about" onClick={closeMenu}>
+              <span
+                className={`text-white hover:text-white/80 ${
+                  router.pathname === "/about" ? "underline" : ""
+                }`}
+              >
+                Hakkımızda
+              </span>
+            </Link>
+            <Link href="/services" onClick={closeMenu}>
+              <span
+                className={`text-white hover:text-white/80 ${
+                  router.pathname === "/services" ? "underline" : ""
+                }`}
+              >
+                Hizmetlerimiz
+              </span>
+            </Link>
+            <Link href="/products" onClick={closeMenu}>
+              <span
+                className={`text-white hover:text-white/80 ${
+                  router.pathname === "/products" ? "underline" : ""
+                }`}
+              >
+                Ürünler
+              </span>
+            </Link>
+            <Link href="/references" onClick={closeMenu}>
+              <span
+                className={`text-white hover:text-white/80 ${
+                  router.pathname === "/references" ? "underline" : ""
+                }`}
+              >
+                Referanslar
+              </span>
+            </Link>
+            <Link href="/blog" onClick={closeMenu}>
+              <span
+                className={`text-white hover:text-white/80 ${
+                  router.pathname === "/blog" ? "underline" : ""
+                }`}
+              >
+                Blog
+              </span>
+            </Link>
+            <Link href="/ai-assistant" onClick={closeMenu}>
+              <span
+                className={`text-white hover:text-white/80 ${
+                  router.pathname === "/ai-assistant" ? "underline" : ""
+                }`}
+              >
+                Dijital Danışman
+              </span>
+            </Link>
+            <Link href="/contact" onClick={closeMenu}>
+              <span
+                className={`text-white hover:text-white/80 ${
+                  router.pathname === "/contact" ? "underline" : ""
+                }`}
+              >
+                İletişim
+              </span>
+            </Link>
+          </div>
         </div>
-
-        {/* Giriş Yap Butonu */}
-        <Link href="/login" className="hidden md:block">
-          <button className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
-            Giriş Yap
-          </button>
-        </Link>
       </div>
 
       {/* Mobil Menü (Tam Ekran) */}
@@ -95,13 +179,22 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.5 }}
-          className="md:hidden fixed top-0 left-0 w-full h-full bg-white z-50 px-6 py-10 shadow-lg"
+          className="md:hidden fixed top-0 left-0 w-full h-full bg-primary z-50 px-6 py-10"
         >
           <div className="flex justify-between items-center mb-10">
             <Link href="/">
-              <Image src="/Images/Logo.png" alt="ARC Dış Ticaret Logo" width={150} height={50} />
+              <Image
+                src="/Images/Logo.png"
+                alt="ARC Dış Ticaret Logo"
+                width={150}
+                height={50}
+              />
             </Link>
-            <button onClick={toggleMenu} className="text-neutral-700">
+            <button
+              onClick={toggleMenu}
+              className="text-white"
+              aria-label="Menüyü kapat"
+            >
               <FaTimes size={30} />
             </button>
           </div>
@@ -109,51 +202,76 @@ const Navbar = () => {
           {/* Menü Linkleri (Mobil) */}
           <div className="space-y-6 w-full flex flex-col items-start">
             <Link href="/" onClick={closeMenu}>
-              <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/" ? "text-secondary" : ""}`}>
+              <span
+                className={`text-white text-lg hover:text-white/80 ${
+                  router.pathname === "/" ? "underline" : ""
+                }`}
+              >
                 Ana Sayfa
               </span>
             </Link>
             <Link href="/about" onClick={closeMenu}>
-              <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/about" ? "text-secondary" : ""}`}>
+              <span
+                className={`text-white text-lg hover:text-white/80 ${
+                  router.pathname === "/about" ? "underline" : ""
+                }`}
+              >
                 Hakkımızda
               </span>
             </Link>
             <Link href="/services" onClick={closeMenu}>
-              <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/services" ? "text-secondary" : ""}`}>
+              <span
+                className={`text-white text-lg hover:text-white/80 ${
+                  router.pathname === "/services" ? "underline" : ""
+                }`}
+              >
                 Hizmetlerimiz
               </span>
             </Link>
             <Link href="/products" onClick={closeMenu}>
-              <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/products" ? "text-secondary" : ""}`}>
+              <span
+                className={`text-white text-lg hover:text-white/80 ${
+                  router.pathname === "/products" ? "underline" : ""
+                }`}
+              >
                 Ürünler
               </span>
             </Link>
             <Link href="/references" onClick={closeMenu}>
-              <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/references" ? "text-secondary" : ""}`}>
+              <span
+                className={`text-white text-lg hover:text-white/80 ${
+                  router.pathname === "/references" ? "underline" : ""
+                }`}
+              >
                 Referanslar
               </span>
             </Link>
             <Link href="/blog" onClick={closeMenu}>
-              <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/blog" ? "text-secondary" : ""}`}>
+              <span
+                className={`text-white text-lg hover:text-white/80 ${
+                  router.pathname === "/blog" ? "underline" : ""
+                }`}
+              >
                 Blog
               </span>
             </Link>
             <Link href="/ai-assistant" onClick={closeMenu}>
-              <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/ai-assistant" ? "text-secondary" : ""}`}>
+              <span
+                className={`text-white text-lg hover:text-white/80 ${
+                  router.pathname === "/ai-assistant" ? "underline" : ""
+                }`}
+              >
                 Akıllı Asistan
               </span>
             </Link>
             <Link href="/contact" onClick={closeMenu}>
-              <span className={`text-neutral-700 text-lg hover:text-secondary ${router.pathname === "/contact" ? "text-secondary" : ""}`}>
+              <span
+                className={`text-white text-lg hover:text-white/80 ${
+                  router.pathname === "/contact" ? "underline" : ""
+                }`}
+              >
                 İletişim
               </span>
-            </Link>
-
-            {/* Giriş Yap Butonu (Mobil) */}
-            <Link href="/login" className="w-full">
-              <button className=" bg-primary text-white w-full py-2 rounded-lg hover:bg-secondary transition mt-8">
-                Giriş Yap
-              </button>
             </Link>
           </div>
         </motion.div>
