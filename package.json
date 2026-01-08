@@ -12,7 +12,7 @@
     "@emailjs/browser": "^4.4.1",
     "@google/generative-ai": "^0.22.0",
     "framer-motion": "^12.4.7",
-    "next": "15.2.0",
+    "next": "15.2.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
